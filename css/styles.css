@@ -705,7 +705,6 @@ img {
 
 .name-input {
     position: relative; 
-    margin-bottom: 16px;
 }
 
 .form-input {
@@ -742,6 +741,10 @@ img {
 .form {
     margin: 0 24px;
     margin-bottom: 8px;
+}
+
+.form-comment {
+    margin-bottom: 16px;
 }
 
 .comment-area {
