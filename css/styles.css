@@ -555,7 +555,6 @@ img {
 .email-input {
     color: #fff;
     border: 1px solid #fff;
-    background-color: transparent;
     font-size: 12px;
     line-height: 2;
     letter-spacing: 0.04em;
@@ -564,7 +563,7 @@ img {
     width: 264px;
     height: 40px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    background-color: #2e2f42;
+    background-color: transparent;
 }
 
 .email-input::placeholder {
@@ -674,7 +673,7 @@ img {
 }
 
 .close:hover,
-.close:focus + .close-icon {
+.close:focus {
     background-color: #404bbf;
     border: none;
     fill: #fff;
