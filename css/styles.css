@@ -674,14 +674,9 @@ img {
 }
 
 .close:hover,
-.close:focus {
+.close:focus + .close-icon {
     background-color: #404bbf;
     border: none;
-    fill: #fff;
-}
-
-.close-icon:hover,
-.close-icon:focus {
     fill: #fff;
 }
 
@@ -710,6 +705,7 @@ img {
 
 .name-input {
     position: relative; 
+    margin-bottom: 16px;
 }
 
 .form-input {
@@ -720,6 +716,7 @@ img {
     background-color: transparent;
     outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 38px;
 }
 
 .icon-person {
@@ -730,16 +727,16 @@ img {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-person:hover,
 .icon-person:focus {
     fill: #4D5AE5;
 }
 
 .form-input:hover,
-.form-input:focus {
+.form-input:focus + .icon-person {
     border: 1px solid #4d5ae5;
     border-radius: 4px;
     height: 40px;
+    fill: #4D5AE5;
 }
 
 .form {
