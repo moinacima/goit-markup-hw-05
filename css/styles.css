@@ -727,12 +727,12 @@ img {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-person:focus {
+.form-input:focus + .icon-person {
     fill: #4D5AE5;
 }
 
 .form-input:hover,
-.form-input:focus + .icon-person {
+.form-input:focus {
     border: 1px solid #4d5ae5;
     border-radius: 4px;
     height: 40px;
@@ -761,7 +761,7 @@ img {
 }
 
 .comment-area:focus {
-    border-color: #4D5AE5; 
+    border-color: #4D5AE5;
 }
 
 .accept {
@@ -792,7 +792,7 @@ img {
     fill: transparent;
 }
 
-.check:checked {
+.check:checked +  .check-label .checked {
     fill: #F4F4FD;
     background-color: #404bbf;
     border: none;
