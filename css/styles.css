@@ -531,6 +531,7 @@ img {
 .footer-input {
     max-width: 453px;
     margin-left: auto;
+    display: flex;
 }
 
 .subscribe {
@@ -547,11 +548,17 @@ img {
 }
 
 .input-form {
-display: inline-flex;
+    display: inline-flex;
+    gap: 24px;
 }
 
 .email-input {
     border: 1px solid #fff;
+    background-color: transparent;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    padding-left: 16px;
     border-radius: 4px;
     width: 264px;
     height: 40px;
@@ -575,7 +582,7 @@ input::placeholder {
     cursor: pointer;
     border-radius: 4px;
     padding: 8px 24px;
-    width: 165px;
+    min-width: 165px;
     height: 40px;
     background-color: #4d5ae5;
 
@@ -583,8 +590,9 @@ input::placeholder {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    text-align: center;
     color: #fff;
+    justify-content: center;
+    align-items: center; 
 }
   
   .submit-button:hover,
@@ -609,8 +617,7 @@ input::placeholder {
     visibility: hidden;
     pointer-events: none;
 
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    visibility: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1); visibility: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -620,6 +627,7 @@ input::placeholder {
 }
 
 .modal {
+    padding: 72px 24px 24px 24px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -630,9 +638,6 @@ input::placeholder {
     border-radius: 4px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #fcfcfc;
-
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    visibility: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop:not(.is-open) .modal {
@@ -640,16 +645,25 @@ input::placeholder {
 }
 
 .close {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
     border: none;
+    background-color: #e7e9fc;
     position: absolute;
     width: 24px;
     height: 24px;
     top: 24px;
     right: 24px;
-    border-radius: 100%;
+    border-radius: 50%;
     fill: #e7e9fc;
     stroke-width: 1px;
-    stroke: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    padding: 0;
+    cursor: pointer;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -657,14 +671,17 @@ input::placeholder {
     fill: #2E2F42;
 }
 
-.close:hover {
+.close:hover
+.close:focus, {
     background-color: #404bbf;
     border: none;
     fill: #fff;
 }
 
-.close-icon:hover {
+.close-icon:hover,
+.close-icon:focus {
     fill: #fff;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop-text {
@@ -674,31 +691,54 @@ input::placeholder {
     letter-spacing: 0.02em;
     text-align: center;
     color: #2e2f42;
-    margin-top: 72px;
     margin-bottom: 16px;
 }
 
+.form {
+    margin-bottom: 8px;
+}
+
 .form-label {
-    margin-bottom: 4px;
-    font-weight: 400;
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.name-input {
+    position: relative; 
 }
 
 .form-input {
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
-    width: 360px;
+    width: 100%;
     height: 40px;
+    background-color: transparent;
+    padding-left: 38px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-person {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-person:hover,
+.icon-person:focus {
+    fill: #4D5AE5;
 }
 
 .form-input:hover,
 .form-input:focus {
     border: 1px solid #4d5ae5;
     border-radius: 4px;
-    width: 360px;
     height: 40px;
 }
 
@@ -716,9 +756,28 @@ input::placeholder {
     margin-bottom: 8px;
 }
 
+.comment-area {
+    width: 100%;
+    height: 120px;
+    font-size: 12px;
+    line-height: 1.17; 
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding: 8px 16px;
+    outline: transparent;
+    resize: none; 
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comment-area:focus {
+    border-color: #4D5AE5; 
+}
+
 .accept {
-    display: inline;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .check {
@@ -726,18 +785,29 @@ input::placeholder {
     border: 1px solid rgba(46, 47, 66, 0.4);
 }
 
+.check-label {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+}
+
+.checked {
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center;
+    fill: transparent;
+}
+
 .check:checked {
     border-radius: 2px;
     fill: #404bbf;
     border: 1px solid #404bbf;
-}
-
-.conditions {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.16667;
-    letter-spacing: 0.04em;
-    color: #8e8f99;
 }
 
 .policy {
