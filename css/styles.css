@@ -529,9 +529,7 @@ img {
 }
 
 .footer-input {
-    max-width: 453px;
     margin-left: auto;
-    display: flex;
 }
 
 .subscribe {
@@ -577,7 +575,6 @@ img {
 }
 
 .submit-button {
-    margin-left: 24px;
     display: inline-flex;
     border: none;
     cursor: pointer;
@@ -743,11 +740,6 @@ img {
     fill: #4D5AE5;
 }
 
-.form {
-    margin: 0 24px;
-    margin-bottom: 8px;
-}
-
 .form-comment {
     margin-bottom: 16px;
 }
@@ -789,6 +781,7 @@ img {
 }
 
 .checked {
+    margin-right: 8px;
     width: 16px;
     height: 16px;
     border: 1px solid rgba(46, 47, 66, 0.4);
